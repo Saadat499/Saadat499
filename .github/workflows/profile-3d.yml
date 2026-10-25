@@ -1,0 +1,77 @@
+name: 3D Contribution Graph
+
+on:
+  schedule:
+    - cron: "0 18 * * *"   # once a day, 02:00 Malaysia time
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Write graph colours
+        run: |
+          cat > "$RUNNER_TEMP/profile-3d.json" <<'JSON'
+          {
+            "type": "normal",
+            "fileName": "profile-gold.svg",
+            "backgroundColor": "#0d1117",
+            "foregroundColor": "#c9d1d9",
+            "strongColor": "#f2c14e",
+            "weakColor": "#7d8590",
+            "radarColor": "#f2c14e",
+            "growingAnimation": true,
+            "contribColors": ["#161b22", "#4d3a0b", "#8a6a12", "#c9971c", "#f2c14e"]
+          }
+          JSON
+
+      - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          SETTING_JSON: ${{ runner.temp }}/profile-3d.json
+
+      - name: Put the graph in a panel that matches the README
+        run: |
+          python3 - <<'PY'
+          """Give the generated 3D contribution SVG the same plain panel as the rest of the README."""
+          import re, sys
+
+          PAD = 24
+          path = "profile-3d-contrib/profile-gold.svg"
+          svg = open(path, encoding="utf-8").read()
+          if 'data-framed="1"' in svg:
+              sys.exit(0)
+          tag = re.match(r"<svg[^>]*>", svg).group(0)
+          m = re.search(r'viewBox="([^"]+)"', tag)
+          if m:
+              x, y, w, h = (float(v) for v in m.group(1).split())
+          else:
+              x, y = 0.0, 0.0
+              w = float(re.search(r'width="([\d.]+)', tag).group(1))
+              h = float(re.search(r'height="([\d.]+)', tag).group(1))
+          x, y, w, h = x - PAD, y - PAD, w + 2 * PAD, h + 2 * PAD
+          new = re.sub(r'\sviewBox="[^"]+"', "", tag)
+          new = re.sub(r'\swidth="[^"]+"', "", new, count=1)
+          new = re.sub(r'\sheight="[^"]+"', "", new, count=1)
+          new = new[:-1] + f' viewBox="{x:g} {y:g} {w:g} {h:g}" width="{w:g}" height="{h:g}" data-framed="1">'
+          back = f'<rect x="{x+1:g}" y="{y+1:g}" width="{w-2:g}" height="{h-2:g}" rx="12" fill="#0D1117"/>'
+          front = f'<rect x="{x+1:g}" y="{y+1:g}" width="{w-2:g}" height="{h-2:g}" rx="12" fill="none" stroke="#30363D" stroke-width="1.5"/>'
+          inner = svg[len(tag):svg.rindex("</svg>")]
+          open(path, "w", encoding="utf-8").write(new + back + inner + front + "</svg>")
+          PY
+
+      - name: Commit and push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add profile-3d-contrib
+          if git commit -m "chore: refresh 3D contribution graph"; then
+            git push
+          fi
