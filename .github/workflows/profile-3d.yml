@@ -5,15 +5,25 @@ on:
     - cron: "0 18 * * *"   # once a day, 02:00 Malaysia time
   workflow_dispatch:        # lets you run it by hand from the Actions tab
 
-permissions:
-  contents: write
+# Nothing by default; each job asks for only what it needs.
+permissions: {}
+
+concurrency:
+  group: profile-3d
+  cancel-in-progress: true
 
 jobs:
+  # Runs the third-party action with a read-only token, so it can never push.
   build:
+    name: Build graph
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read   # checkout; the action reads public contributions over GraphQL
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5.1.0
+        with:
+          persist-credentials: false
 
       - name: Write graph colours
         run: |
@@ -31,7 +41,7 @@ jobs:
           }
           JSON
 
-      - uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+      - uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39  # v0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
@@ -67,11 +77,37 @@ jobs:
           open(path, "w", encoding="utf-8").write(new + back + inner + front + "</svg>")
           PY
 
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
+        with:
+          name: profile-3d
+          path: profile-3d-contrib/profile-gold.svg
+          if-no-files-found: error
+          retention-days: 1
+
+  # Only first-party actions and git run here, so the write token stays with code we control.
+  commit:
+    name: Commit graph
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write   # push the refreshed SVG
+    steps:
+      # Credentials stay on disk for the push; this job runs no third-party code and uploads no artifacts.
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09  # v5.1.0
+        with:
+          persist-credentials: true  # zizmor: ignore[artipacked]
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333  # v8.0.2
+        with:
+          name: profile-3d
+          path: profile-3d-contrib
+
       - name: Commit and push
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add profile-3d-contrib
+          git add profile-3d-contrib/profile-gold.svg
           if git commit -m "chore: refresh 3D contribution graph"; then
             git push
           fi

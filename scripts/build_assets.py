@@ -15,7 +15,7 @@ import argparse
 import re
 import textwrap
 from pathlib import Path
-from xml.sax.saxutils import escape
+from xml.sax.saxutils import escape  # nosec B406 - only escapes our own strings, never parses XML
 
 ROOT = Path(__file__).resolve().parent.parent
 ASSETS = ROOT / "assets"
