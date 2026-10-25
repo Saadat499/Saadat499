@@ -1,9 +1,15 @@
+<!-- ============================================================== -->
+<!--  you are reading the source. nice. every claim needs evidence,  -->
+<!--  so here is yours:                                              -->
+<!--  ZmxhZ3tzaG93X3lvdXJfZXZpZGVuY2Vfb3Jfc2F5X25lZWRzX3Jldmlld30=    -->
+<!-- ============================================================== -->
+
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d1117,100:3d2e00&height=220&section=header&text=SAADAT%20AHMED&fontSize=56&fontColor=f2c14e&fontAlignY=40&desc=RAG%20%7C%20Multi-Agent%20Systems%20%7C%20NLP%20%7C%20Data%20Analytics&descSize=16&descAlignY=62&descColor=8b949e&animation=fadeIn" width="100%" alt="Saadat Ahmed. RAG, multi-agent systems, NLP, data analytics"/>
+  <img src="https://capsule-render.vercel.app/api?type=venom&color=0:0d1117,100:3d2e00&height=220&section=header&text=SAADAT%20AHMED&fontSize=56&fontColor=f2c14e&fontAlignY=40&desc=AI%20%7C%20NLP%20%7C%20Document%20AI%20%7C%20Data%20Analytics&descSize=16&descAlignY=62&descColor=8b949e&animation=fadeIn" width="100%" alt="Saadat Ahmed. AI, NLP, document AI, data analytics"/>
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3200&pause=900&color=F2C14E&center=true&vCenter=true&width=640&lines=saadat%40dev%3A~%24+whoami;Saadat+Ahmed+%2F%2F+AI+and+data+builder;Building+a+conflict-aware+Shariah+compliance+RAG;ScanHalal%3A+OCR+%2B+BERT+NER+ingredient+checker;Python+%7C+SQL+%7C+PyTorch+%7C+Power+BI" alt="typing"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3200&pause=900&color=F2C14E&center=true&vCenter=true&width=680&lines=saadat%40dev%3A~%24+whoami;Saadat+Ahmed+%2F%2F+AI%2C+NLP+and+data+builder;ScanHalal%3A+halal+label+scanner%2C+live;ShipSentry+and+VoxelSort%3A+hackathon+team+builds;Data+stories+in+SQL+and+Power+BI;Now+building%3A+a+Shariah+compliance+RAG" alt="typing"/>
 </p>
 
 <p align="center">
@@ -19,21 +25,59 @@
 
 <br>
 
-<!-- pipeline and profile card sit side by side at 48% each so they line up -->
+<!-- project map and profile card sit side by side at 48% each so they line up -->
 <div align="right">
-<img src="assets/pipeline.svg" width="48%" align="left" alt="How the Shariah Compliance RAG answers: security gate, router, agents, stratified retrieval over BNM, SAC and AAOIFI, then a cited answer or escalation.">
-<img src="assets/card.svg" width="48%" alt="Saadat Ahmed, AI and data builder. Focus: RAG, multi-agent systems, NLP.">
+<img src="assets/terminal.svg" width="48%" align="left" alt="Terminal listing of my projects by domain: AI and NLP, document automation, data analytics, foundations.">
+<img src="assets/card.svg" width="48%" alt="Saadat Ahmed, AI and data builder. Focus: AI, NLP and data analytics.">
 </div>
 
 <br clear="left">
 
 ## About
 
-I build AI and data projects that have to be right, not just fluent. My halal ingredient scanner says "needs review" instead of guessing, my food-price study reports its own coverage gaps, and my current project, a Shariah compliance RAG, cites a real clause for every claim or abstains.
+I'm Saadat, and I build AI and data projects end to end, from messy input to something people can actually use. My first projects on GitHub were small Java OOP programs in 2025. Since then I've shipped a halal ingredient scanner, built two hackathon projects with teams, written two data analytics studies, and started a Shariah compliance RAG.
 
-My main interests are retrieval-augmented generation, multi-agent systems and NLP, especially where they meet Islamic finance and halal standards.
+The common thread is **trust**. I like problems where a wrong answer is costly, so my systems show their evidence and say when they are unsure:
 
-<!-- add: where you study or work, and what kind of role or collaboration you are looking for -->
+- **ScanHalal** marks an ingredient "needs review" instead of guessing halal or haram.
+- **ShipSentry** checks shipping documents automatically and only sends the truly uncertain cases to a human.
+- **Malaysia Food Prices** reports its coverage gaps and sensitivity checks next to every headline number.
+- **Shariah Compliance RAG** cites a real clause for every claim and shows disagreements between BNM, SAC and AAOIFI instead of hiding them.
+
+I'm most interested in AI for Islamic finance and halal standards, document AI, NLP, and evaluating models on data they have never seen.
+
+<!-- add a line about where you study or work, and what roles or collaborations you are looking for -->
+
+**Right now**
+
+- **Building:** a Shariah compliance RAG over BNM policy documents, SAC rulings and AAOIFI standards
+- **Recently shipped:** ScanHalal (live), ShipSentry at the Averis x Monash Hackathon 2026, VoxelSort at Dormathon 2026
+- **Ask me about:** OCR and NER pipelines, honest model evaluation, SQL and Power BI dashboards
+
+## By the Numbers
+
+<img src="assets/stats.svg" width="100%" alt="By the numbers: ScanHalal ingredient F1 0.967 and 181,970 training sentences; ShipSentry 1,560 emails scored and only 20 of 520 left for a human; VoxelSort AUROC 0.811; 957 price combinations tested; 10 business questions in SQL; 3 languages in the Shariah RAG.">
+
+## Featured Projects
+
+<p align="center">
+  <a href="https://github.com/Saadat499/foodstatus-ingredient-ner"><img src="assets/projects/scanhalal.svg" width="49%" alt="ScanHalal: halal ingredient label scanner with OCR and BERT NER, live demo"></a>
+  <a href="https://github.com/Saadat499/shippingdoc_verfication"><img src="assets/projects/shipsentry.svg" width="49%" alt="ShipSentry: shipping document mismatch checker, Averis x Monash Hackathon 2026"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/Saadat499/Dormathon2026"><img src="assets/projects/voxelsort.svg" width="49%" alt="VoxelSort: chest X-ray worklist prioritiser, Dormathon 2026 team build"></a>
+  <img src="assets/projects/shariah-rag.svg" width="49%" alt="Shariah Compliance RAG: cited answers over BNM, SAC and AAOIFI, in progress">
+</p>
+<p align="center">
+  <a href="https://github.com/Saadat499/malaysia-food-prices"><img src="assets/projects/food-prices.svg" width="49%" alt="Malaysia Food Prices: festive price movements from PriceCatcher open data"></a>
+  <a href="https://github.com/Saadat499/customer-shopping-behavior-analysis"><img src="assets/projects/customer-behavior.svg" width="49%" alt="Customer Behavior Analysis: pandas, PostgreSQL and Power BI"></a>
+</p>
+
+<p align="center"><sub>Click a card to open the repo. The Shariah Compliance RAG repo is private while it is in progress.</sub></p>
+
+## Journey
+
+<img src="assets/journey.svg" width="100%" alt="Journey: joined GitHub in November 2024, Java OOP projects in April 2025, ScanHalal from August 2026, ShipSentry in September 2026, data analytics and VoxelSort in October 2026, Shariah RAG now.">
 
 ## Skills and Tools
 
@@ -80,25 +124,14 @@ My main interests are retrieval-augmented generation, multi-agent systems and NL
 <td>
 <img src="assets/tools/python.svg" width="64" height="64" title="Python" alt="Python">
 <img src="assets/tools/java.svg" width="64" height="64" title="Java" alt="Java">
+<img src="assets/tools/fastapi.svg" width="64" height="64" title="FastAPI" alt="FastAPI">
 <img src="assets/tools/git.svg" width="64" height="64" title="Git" alt="Git">
 <img src="assets/tools/github.svg" width="64" height="64" title="GitHub" alt="GitHub">
 </td>
 </tr>
 </table>
 
-## Featured Projects
-
-<table>
-<tr><th width="20%" align="left">Project</th><th width="58%" align="left">What it is</th><th width="22%" align="left">Stack</th></tr>
-<tr><td><b>Shariah Compliance RAG</b><br><sub>In progress</sub></td><td>Retrieval and multi-agent review assistant over BNM policy documents, SAC rulings and AAOIFI standards. Cites the exact clause, shows disagreements between authorities side by side, and never issues a fatwa.</td><td>Python, Pydantic, pdfplumber, RAG</td></tr>
-<tr><td><a href="https://github.com/Saadat499/foodstatus-ingredient-ner"><b>ScanHalal</b></a></td><td>Point a camera at an ingredient label and get a halal, haram or syubhah verdict per ingredient, with the evidence behind it. Fine-tuned BERT NER reaches ingredient F1 0.967 on its test set.</td><td>PyTorch, Transformers, Tesseract, Streamlit</td></tr>
-<tr><td><a href="https://github.com/Saadat499/shippingdoc_verfication"><b>ShipSentry</b></a><br><sub>Team of 5</sub></td><td>Averis x Monash Hackathon 2026. Checks that a Shipping Instruction and a draft Bill of Lading describe the same shipment. I coordinated the team and worked on verification and comparison.</td><td>Python, pdfplumber, Gemini, Firebase</td></tr>
-<tr><td><a href="https://github.com/Saadat499/Dormathon2026"><b>VoxelSort</b></a><br><sub>Team project</sub></td><td>Dormathon 2026. Chest X-ray worklist prioritiser for decision support; a clinician reads every scan.</td><td>Python, FastAPI, React</td></tr>
-<tr><td><a href="https://github.com/Saadat499/malaysia-food-prices"><b>Malaysia Food Prices</b></a></td><td>How staple food prices move around festive periods, by state and premise type, using PriceCatcher open data, with coverage and sensitivity checks.</td><td>Python, SQL, DuckDB, Power BI</td></tr>
-<tr><td><a href="https://github.com/Saadat499/customer-shopping-behavior-analysis"><b>Customer Behavior Analysis</b></a></td><td>End-to-end retail analytics: Python cleaning, ten business questions in PostgreSQL, and an interactive Power BI dashboard.</td><td>pandas, PostgreSQL, Power BI</td></tr>
-</table>
-
-## Build Progress
+## Now Building: Shariah Compliance RAG
 
 <img src="assets/progress.svg" width="100%" alt="Shariah Compliance RAG build progress: Phase 0 done, Phase 1 at 7 of 9 tasks, Phase 2 up next, Phases 3 to 5 planned.">
 
@@ -114,4 +147,4 @@ My main interests are retrieval-augmented generation, multi-agent systems and NL
 
 <img src="profile-3d-contrib/profile-gold.svg" width="100%" alt="3D contribution graph">
 
-<p align="center"><sub>Every claim cites a source. That goes for this page too.</sub></p>
+<p align="center"><sub>psst. every claim needs a source, and there is a flag hidden in this README's source.</sub></p>
